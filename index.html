@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Secret Chat</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="container">
+		<h1>Secret Chat</h1>
+		
+		
+		<div id="login" class="panel">
+			<input id="name" placeholder="Enter your name">
+			<button id="joinBtn">Join Chat</button>
+		</div>
+
+		
+		<div id="user-selection" style="display:none;" class="panel">
+			<h3>Online Users</h3>
+			<div id="user-list"></div>
+			<p id="no-users" style="display:none;">No other users online</p>
+			<button id="refreshBtn">Refresh List</button>
+		</div>
+
+		
+		<div id="chat-container" style="display:none;" class="panel">
+			<div id="chat-header">
+				<span id="chat-with">Chatting with: <strong id="friend-name"></strong></span>
+				<div id="chat-controls">
+					<button id="reconnectBtn">🔄 Reconnect</button>
+					<button id="backBtn">← Back</button>
+				</div>
+			</div>
+
+			
+			<div id="status-board" style="padding:10px; background:#111; color:#0f0; display:flex; justify-content:space-around; border-bottom:1px solid #0f0; border-radius:0 0 5px 5px;">
+				<span id="status-connection">🔄 Connecting</span>
+				<span id="status-encryption">🔒 Not encrypted</span>
+			</div>
+
+			<div id="messages"></div>
+			<div id="input-area">
+				<input id="messageInput" placeholder="Type your message...">
+				<button id="sendBtn">Send</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>
