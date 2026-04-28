@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: flex-start;
+}
+
+
+.container {
+    width: 95%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #0f0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+
+.panel {
+    background-color: #111;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,255,0,0.3);
+    margin-bottom: 15px;
+}
+
+
+input, button {
+    font-family: inherit;
+}
+
+#login input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #0f0;
+    background-color: #000;
+    color: #0f0;
+}
+
+#login button,
+#refreshBtn,
+#backBtn,
+#reconnectBtn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+
+#login button { background-color: #0f0; color: #000; }
+#login button:hover { background-color: #0c0; }
+
+#refreshBtn { background-color: #0ff; color: #000; }
+#refreshBtn:hover { background-color: #0cc; }
+
+#backBtn { background-color: #ff0; color: #000; }
+#backBtn:hover { background-color: #cc0; }
+
+#reconnectBtn { background-color: #f90; color: #000; }
+#reconnectBtn:hover { background-color: #c70; }
+
+
+#user-selection h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #0f0;
+}
+
+#user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 8px;
+    border: 1px solid #0f0;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.user-item:hover {
+    background-color: #0a0;
+    color: #000;
+}
+
+.user-item button {
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.user-item button:hover {
+    background-color: #0c0;
+}
+
+#no-users {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+#chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #111;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #0f0;
+}
+
+#chat-controls button {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 0.9em;
+}
+
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #000;
+}
+
+
+.message {
+    max-width: 80%;
+    padding: 8px 12px;
+    margin: 6px 0;
+    border-radius: 15px;
+    word-wrap: break-word;
+}
+
+.message.self { background-color: #0f0; color: #000; margin-left: auto; }
+.message.friend { background-color: #222; color: #0f0; margin-right: auto; }
+.message.system { text-align: center; font-style: italic; font-size: 0.9em; }
+
+
+#input-area {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    background-color: #111;
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #0f0;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #0f0;
+    background-color: #000;
+    color: #0f0;
+}
+
+#sendBtn {
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #0f0;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#sendBtn:hover { background-color: #0c0; }
+
+
+@media (max-width: 600px) {
+    h1 { font-size: 1.5em; }
+    #chat-container { height: 75vh; }
+    #messages { padding: 6px; }
+    #input-area { padding: 6px; gap: 5px; }
+    #messageInput, #sendBtn, button { font-size: 0.9em; padding: 6px; }
+}
