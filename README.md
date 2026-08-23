@@ -28,3 +28,7 @@ git clone https://git.fhict.nl/I567390/secret-chat
 cd secret-chat/
 python3.11 server.py
 ```
+
+## License
+
+Choose a license appropriate for your project. If you want a permissive license while requiring downstream users to retain attribution, the **Apache License 2.0** is a strong option.
