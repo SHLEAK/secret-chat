@@ -12,6 +12,10 @@ This project demonstrates the **Realisation** and **Manage & Control** phases of
 
 ---
 
+![preview](preview.png)
+
+---
+
 ## Features
 - Peer-to-peer messaging using WebRTC
 - Local database to store chat logs
