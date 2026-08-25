@@ -24,7 +24,7 @@ This project demonstrates the **Realisation** and **Manage & Control** phases of
 
 1. **Clone the repository**
 ```bash
-git clone https://git.fhict.nl/I567390/secret-chat
+git clone https://github.com/SHLEAK/secret-chat.git
 cd secret-chat/
 python3.11 server.py
 ```
