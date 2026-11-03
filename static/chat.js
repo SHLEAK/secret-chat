@@ -226,7 +226,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	refreshBtn.addEventListener("click", fetchUserList);
 	backBtn.addEventListener("click", () => {
-	chatContainer.style.display = "none";
+	document.getElementById("chat-container").style.display = "none";
 	userPanel.style.display = "block";
 	friend = null;
 });

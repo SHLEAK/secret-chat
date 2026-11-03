@@ -5,6 +5,7 @@ app = Flask(__name__)
 signals = {}
 online_users = {}
 USER_TIMEOUT = 30  # seconds before user is considered offline
+MAX_PENDING_SIGNALS = 200  # per direction, prevents unbounded memory growth
 
 @app.route("/")
 def index():
@@ -43,7 +44,11 @@ def heartbeat():
 def signal():
 	data = request.get_json()
 	key = f"{data['from']}+{data['to']}"
-	signals.setdefault(key, []).append(data)
+	queue = signals.setdefault(key, [])
+	# keep the buffer bounded so an unused mailbox cannot grow without limit
+	if len(queue) > MAX_PENDING_SIGNALS:
+		del queue[:-MAX_PENDING_SIGNALS]
+	queue.append(data)
 	return jsonify(success=True)
 
 @app.route("/fetch_signals", methods=["GET"])
@@ -56,4 +61,4 @@ def fetch_signals():
 	return jsonify(messages=msgs)
 
 if __name__ == "__main__":
-	app.run(host="0.0.0.0", port=5000, debug=True)
+	app.run(host="0.0.0.0", port=5000, debug=False)
