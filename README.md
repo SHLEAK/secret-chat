@@ -86,8 +86,9 @@ static/style.css     Styling
 
 ## Screenshots
 
-Adding a screenshot or short GIF of two browser windows chatting would make this
-repository much easier to evaluate at a glance.
+`preview.png` at the top of this file shows two browser windows connected through
+the app. A short GIF of the handshake and a first message would be a worthwhile
+addition.
 
 ## License
 
